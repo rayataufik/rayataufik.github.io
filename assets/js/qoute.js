@@ -6,5 +6,5 @@ fetch("https://api.quotable.io/random?tags=technology")
   })
   .then((data) => {
     Content.innerText = data.content;
-    Author.innerText = `${data.author}`;
+    Author.innerText = data.author;
   });
