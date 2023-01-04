@@ -1,0 +1,159 @@
+
+/* For the new header, all text shall be black around the intro section 
+	 Will hopefully be easier to read.
+*/
+.text-black {
+	color: black;
+}
+
+.text-small {
+  font-size: 100%;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+/* Changing the Navbar text color to be darker - easier to read on a light background header image. */
+
+/* Making the "text-muted" class smaller, seems a bit too large. */
+.text-muted {
+  font-size: 97%;
+}
+
+/* Removing the bottom margin in the Languages and Skills area */
+#about > div > div:nth-child(2) > div:nth-child(3) > p.text-faded.no-margin {
+    margin-bottom: 0;
+}
+#about > div > div:nth-child(2) > div:nth-child(4) > p.text-faded.no-margin {
+  margin-bottom: 0;
+}
+
+/*  For the GitHub Section link
+    These links were  helpful:
+
+    https://stackoverflow.com/questions/9586596/control-underline-position-on-text-decoration-underline
+    https://www.w3schools.com/css/css_link.asp
+    https://www.w3schools.com/css/tryit.asp?filename=trycss_link2
+*/
+.text-blue {
+  color: blue;
+  border-bottom: 1px solid currentColor;
+}
+
+.text-white-link {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Link color when it is unvisited */
+a.text-blue:link  {
+  color: blue;
+  border-bottom: 1px solid currentColor;
+}
+a.text-white-link:link  {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Link color after being clicked on and visited */
+a.text-blue:visited {
+  color: blue;
+  border-bottom: 1px solid currentColor;
+}
+a.text-white-link:visited {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Link color while being hovered on */
+a.text-blue:hover {
+  color: blue;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+}
+a.text-white-link:hover {
+  color: blue;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+}
+
+/* Link color the moment it is clicked */
+a.text-blue:active {
+  color: blue;
+  border-bottom: 1px solid currentColor;
+}
+a.text-white-link:active {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+.min-padding {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.min-padding-top {
+  padding-top: 2em;
+  padding-bottom: 0em;
+}
+
+
+.div-padding-fix {
+  padding-bottom: 2em;
+}
+
+.bg-green {
+	background-color: #1DB954 !important;
+}
+
+.btn-black {
+	color: #fff;
+	background-color: #000000 !important;
+}
+.btn-black:active, .btn-black:focus, .btn-black:hover {
+	color: #fff;
+	background-color: #262626 !important;
+}
+.btn-black:active, .btn-black:focus {
+	box-shadow:0 0 0 .2rem rgba(240,95,64,.5)!important;
+}
+
+.href-black {
+	color: #000000;
+}
+hr.black {
+	border-color: #000000;
+	color: #000000;
+}
+
+.images-vcenter {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.images-border {
+	border: .5em solid #000000;
+	border-radius: 3em;
+}
+
+.images-border-skiing {
+	border: .5em solid #000000;
+	border-radius: 50%;
+}
+
+.images-size-mtb {
+	width: 70%;
+	height: auto;
+}
+
+.images-size-skiing {
+	width: 90%;
+	height: auto;
+}
+
+.RtnRed {
+	color: #E61231 !important;
+	font-weight: bold;
+}
