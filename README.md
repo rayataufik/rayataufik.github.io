@@ -9,6 +9,3 @@
 
 ###
 
-<img src="https://raw.githubusercontent.com/rayataufik/rayataufik/output/snake.svg" alt="Snake animation" />
-
-###
