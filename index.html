@@ -1,234 +1,635 @@
-<!--
-    ( ͡° ͜ʖ ͡°)
-
-    Feeling snoopy are we?
-
-    Just remember, this code is copyrighted to Raya Taufik - you can look but you can't touch ಠ~ಠ
--->
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Raya Taufik — Software Engineer & AI Agent Builder from Indonesia. IT Staff at CoE Humic Engineering." />
+    <link rel="icon" href="data:," />
+    <title>Raya Taufik — Software Engineer & AI Agent Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#ffffff; --ink:#0a0a0a; --ink-2:#404040; --muted:#737373;
+        --line:#e7e7e7; --card:#ffffff; --card-border:#111111;
+        --shadow:7px 7px 0 #d4d4d4;
+        --nav-bg:#262626; --nav-ink:#f5f5f5;
+        --dots:radial-gradient(circle, #d9d9d9 1.1px, transparent 1.2px);
+        --term-head:#e9ebee; --term-bg:#ffffff;
+        --blue:#a5d8f5; --lav:#b9b6e3; --mint:#b7e4c7; --pale:#fef9c3; --salmon:#f6a192;
+        --accent:#f5b301; --link:#2563eb;
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#0d0d0f; --ink:#fafafa; --ink-2:#d4d4d4; --muted:#a3a3a3;
+          --line:#26262a; --card:#161618; --card-border:#e5e5e5;
+          --shadow:7px 7px 0 #2e2e33;
+          --nav-bg:#1c1c1f; --nav-ink:#f5f5f5;
+          --dots:radial-gradient(circle, #2c2c31 1.1px, transparent 1.2px);
+          --term-head:#1f1f23; --term-bg:#121214;
+          --link:#7db4ff;
+          color-scheme: dark;
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+      a{color:inherit}
+      button,[role="button"],a.btn,nav.dock a{min-height:2.25rem}
+      ::selection{background:#fde68a;color:#111}
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+      /* ---------- top bar ---------- */
+      .topbar{max-width:1280px;margin:0 auto;padding:1.4rem 2rem 0;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+      .hello{display:flex;align-items:center;gap:.55rem;font-family:"Archivo",sans-serif;font-weight:800;font-size:1.35rem;color:var(--accent);letter-spacing:-.01em}
+      .hello .wave{display:inline-block;font-size:1.9rem;animation:wave 2.4s ease-in-out infinite;transform-origin:70% 70%}
+      @keyframes wave{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(16deg)}20%{transform:rotate(-8deg)}30%{transform:rotate(16deg)}40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}}
+      .top-right{display:flex;align-items:center;gap:1.6rem}
+      .socials{display:flex;align-items:center;gap:1.05rem}
+      .socials a{display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;color:var(--ink);opacity:.85;transition:opacity .15s,transform .15s}
+      .socials a:hover{opacity:1;transform:translateY(-2px)}
+      .socials svg{width:21px;height:21px}
+      .clock{display:flex;align-items:flex-start;gap:.45rem;line-height:1;text-align:left}
+      .clock .time{font-family:"Archivo",sans-serif;font-weight:800;font-size:2rem;letter-spacing:-.02em}
+      .clock .ampm{font-size:.72rem;font-weight:600;margin-top:.2rem}
+      .clock .date{font-size:.72rem;color:var(--ink-2);margin-top:.18rem}
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+      /* ---------- hero ---------- */
+      .hero{position:relative;max-width:1280px;margin:0 auto;padding:9vh 1.5rem 4vh;text-align:center}
+      .arc{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:min(1150px,130vw);opacity:.5;pointer-events:none}
+      .arc text{font-family:"Inter",sans-serif;font-size:15px;font-weight:500;fill:var(--muted);letter-spacing:.04em}
+      .hero h1{position:relative;margin:0;font-family:"Archivo",sans-serif;font-weight:900;line-height:.98;letter-spacing:-.015em;text-transform:uppercase}
+      .hero h1 .l1{display:block;font-size:clamp(4.2rem,15.5vw,12.5rem);color:var(--ink)}
+      .hero h1 .l2{display:block;font-size:clamp(4.2rem,15.5vw,12.5rem);color:#737373}
+      @media (prefers-color-scheme: dark){.hero h1 .l2{color:#8a8a8a}}
+      .hero .role{position:relative;margin:2rem auto 0;max-width:640px;color:var(--muted);font-size:1.02rem;line-height:1.65}
+      .hero .role strong{color:var(--ink);font-weight:600}
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+      /* ---------- dock nav ---------- */
+      .dock{position:fixed;left:50%;bottom:1.1rem;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:.35rem;background:var(--nav-bg);background-image:radial-gradient(circle,rgba(255,255,255,.13) 1px,transparent 1.1px);background-size:9px 9px;color:var(--nav-ink);border-radius:999px;padding:.45rem .5rem .45rem .7rem;box-shadow:0 18px 40px rgba(0,0,0,.28);max-width:calc(100vw - 1.5rem)}
+      .dock a{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .8rem;border-radius:999px;text-decoration:none;font-size:.86rem;font-weight:500;white-space:nowrap}
+      .dock a:hover{background:rgba(255,255,255,.12)}
+      .dock a.home{padding:.45rem .55rem}
+      .dock a.talk{background:#000;color:#fff;font-weight:600;margin-left:.25rem;padding:.55rem 1rem}
+      @media (prefers-color-scheme: dark){.dock a.talk{background:#fff;color:#000}}
+      .dock a.talk:hover{opacity:.85}
+      .dock svg{width:17px;height:17px;flex:none}
+      @media (max-width:640px){.dock a.opt{display:none}.dock a{padding:.45rem .6rem;font-size:.82rem}}
 
-  <!-- Personal CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+      main{padding-bottom:7.5rem}
+      .wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
 
-  <!-- icon font -->
-  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+      /* ---------- intro ---------- */
+      .intro{padding:14vh 0 0}
+      .intro .kicker{color:var(--muted);font-size:1.06rem;margin:0 0 1.2rem}
+      .intro h2{position:relative;margin:0;font-family:"Inter",sans-serif;font-weight:700;letter-spacing:-.03em;line-height:1.14;font-size:clamp(2rem,5.2vw,3.9rem);color:var(--ink);max-width:1020px}
+      .intro h2 .dim{color:var(--ink-2);font-weight:500}
+      .sticker{position:absolute;display:inline-flex;align-items:center;gap:.35rem;padding:.32rem .8rem;border-radius:.65rem;border:2px solid;font-family:"Inter",sans-serif;font-weight:600;font-size:clamp(.85rem,1.8vw,1.25rem);letter-spacing:0;white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,.10);z-index:3}
+      .sticker svg{width:1em;height:1em}
+      .st-ai{top:-1.4em;right:16%;background:#fbcfe8;border-color:#db2777;color:#9d174d;transform:rotate(6deg)}
+      .st-ui{top:.85em;left:24%;background:#fef08a;border-color:#ca8a04;color:#854d0e;transform:rotate(-5deg)}
+      .st-ship{bottom:-.4em;left:44%;background:#bbf7d0;border-color:#16a34a;color:#166534;transform:rotate(-4deg)}
+      .st-perf{top:2.6em;right:6%;background:#e9d5ff;border-color:#9333ea;color:#6b21a8;transform:rotate(5deg)}
+      @media (max-width:760px){.st-perf{display:none}.st-ai{right:2%}.st-ship{left:52%}}
+      .float{animation:floaty 5s ease-in-out infinite}
+      .float2{animation:floaty 6s ease-in-out infinite reverse}
+      @keyframes floaty{0%,100%{margin-top:0}50%{margin-top:-7px}}
 
-  <title>@raya_taufik</title>
-</head>
+      .floor{position:relative;height:300px;margin-top:2.5rem;overflow:hidden}
+      .floor .plane{position:absolute;left:-25%;right:-25%;top:8%;bottom:-40%;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;transform:perspective(520px) rotateX(62deg);transform-origin:top center;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 30%,#000 75%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 30%,#000 75%,transparent)}
+      .floor .glow{position:absolute;left:50%;top:20%;transform:translateX(-50%);width:720px;height:340px;background:radial-gradient(ellipse at center,rgba(74,222,128,.16),transparent 65%);pointer-events:none}
+      .terminal{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);width:min(660px,92vw);background:var(--term-bg);border:1px solid var(--line);border-radius:.8rem;box-shadow:0 24px 50px rgba(0,0,0,.10);overflow:hidden;text-align:left}
+      .terminal .bar{display:flex;align-items:center;background:var(--term-head);padding:.55rem .9rem;gap:.45rem}
+      .terminal .dot{width:12px;height:12px;border-radius:50%}
+      .terminal .bar .t{flex:1;text-align:center;font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--muted)}
+      .terminal .body{padding:1rem 1.1rem 1.2rem;font-family:"JetBrains Mono",monospace;font-size:.86rem;line-height:1.75;min-height:118px;color:var(--ink-2)}
+      .terminal .body .dim{color:var(--muted)}
+      .terminal .body .prompt{color:#16a34a;font-weight:600}
+      .terminal .body .cmd{color:#d97706}
+      .terminal .caret{display:inline-block;width:8px;height:1em;background:var(--ink-2);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+      @keyframes blink{50%{opacity:0}}
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-dark">
-    <div class="container-fluid justify-content-end">
-      <a href="socials.html">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      /* ---------- section titles ---------- */
+      .sec-title{font-family:"Playfair Display",serif;font-weight:800;text-align:center;font-size:clamp(3rem,8.5vw,6.2rem);letter-spacing:-.02em;margin:0 0 3rem;line-height:1}
+
+      /* ---------- projects ---------- */
+      .projects{padding:16vh 0 0}
+      .projects .dots-bg{background-image:var(--dots);background-size:22px 22px;padding:1rem 0 2rem}
+      .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+      @media (max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+      @media (max-width:620px){.grid{grid-template-columns:1fr}}
+      .proj{display:flex;align-items:center;gap:1.1rem;background:var(--card);border:1.5px solid var(--card-border);border-radius:1.15rem;padding:1.35rem 1.4rem;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+      .proj:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 #bdbdbd}
+      @media (prefers-color-scheme: dark){.proj:hover{box-shadow:10px 10px 0 #3a3a41}}
+      .proj .tile{flex:none;width:62px;height:62px;border-radius:.9rem;display:flex;align-items:center;justify-content:center;color:#fff}
+      .proj .tile svg{width:32px;height:32px}
+      .proj h3{margin:0 0 .3rem;font-size:1.02rem;font-weight:700;line-height:1.3}
+      .proj p{margin:0 0 .35rem;font-size:.85rem;color:var(--muted);line-height:1.45}
+      .proj .url{font-size:.85rem;color:var(--link);font-weight:500;word-break:break-all}
+      .more-row{text-align:center;margin-top:2.8rem}
+      .more-btn{display:inline-flex;align-items:center;gap:.5rem;background:#111;color:#fff;border:none;border-radius:999px;padding:.8rem 1.6rem;font-family:"Inter",sans-serif;font-size:.92rem;font-weight:600;cursor:pointer;min-height:2.75rem}
+      @media (prefers-color-scheme: dark){.more-btn{background:#fff;color:#111}}
+      .more-btn:hover{opacity:.85}
+      .hidden-proj{display:none}
+      .grid.show-all .hidden-proj{display:flex}
+
+      /* ---------- stats ---------- */
+      .stats{padding:15vh 0 0;text-align:center}
+      .stats h2{margin:0 auto 3.2rem;max-width:900px;font-size:clamp(1.7rem,4.4vw,3rem);font-weight:700;letter-spacing:-.02em;line-height:1.25;background:linear-gradient(92deg,#ec4899,#8b5cf6 55%,#3b82f6);-webkit-background-clip:text;background-clip:text;color:transparent}
+      .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1020px;margin:0 auto}
+      @media (max-width:820px){.stat-row{grid-template-columns:repeat(2,1fr)}}
+      .stat{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.6rem 1rem 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+      .stat .n{font-family:"Archivo",sans-serif;font-weight:800;font-size:2rem;letter-spacing:-.02em}
+      .stat .l{color:var(--muted);font-size:.9rem;margin-top:.45rem}
+
+      /* ---------- principles bento ---------- */
+      .principles{padding:15vh 0 0}
+      .bento{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:auto auto;gap:1rem}
+      .bento .cell{border-radius:1.3rem;padding:2rem;display:flex;flex-direction:column;min-height:250px;color:#111}
+      .bento .cell svg{width:40px;height:40px;margin-bottom:auto}
+      .bento .cell h3{margin:2.2rem 0 .7rem;font-size:1.65rem;font-weight:500;letter-spacing:-.01em}
+      .bento .cell p{margin:0;font-size:.92rem;line-height:1.55;color:rgba(0,0,0,.72);max-width:42ch}
+      .b-blue{background:var(--blue)} .b-lav{background:var(--lav)} .b-mint{background:var(--mint);grid-row:span 2}
+      .b-pale{background:var(--pale)} .b-salmon{background:var(--salmon)}
+      @media (max-width:860px){.bento{grid-template-columns:1fr 1fr}.b-mint{grid-row:auto}}
+      @media (max-width:560px){.bento{grid-template-columns:1fr}.bento .cell{min-height:210px}}
+
+      /* ---------- experience ---------- */
+      .experience{padding:15vh 0 0}
+      .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;align-items:stretch}
+      @media (max-width:1020px){.exp-grid{grid-template-columns:repeat(2,1fr)}}
+      @media (max-width:640px){.exp-grid{grid-template-columns:1fr}}
+      .exp-card{position:relative;border-radius:1.2rem;padding:1.6rem 1.6rem 1.5rem;color:#fff;background:#0a0a0a;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 22px 44px rgba(0,0,0,.25)}
+      .exp-card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 200px at 15% 110%,rgba(255,255,255,.20),transparent 60%),radial-gradient(380px 220px at 90% -10%,rgba(255,255,255,.14),transparent 60%),repeating-radial-gradient(circle at 80% 120%,rgba(255,255,255,.05) 0 2px,transparent 2px 14px);pointer-events:none}
+      .exp-card .chip{position:relative;flex:none;width:44px;height:34px;border-radius:.4rem;background:linear-gradient(135deg,#e0f2fe,#fbcfe8 45%,#fef08a 80%,#bbf7d0);opacity:.95}
+      .exp-card .chip::after{content:"";position:absolute;inset:0;border-radius:.4rem;border:1px solid rgba(0,0,0,.18);background:linear-gradient(90deg,transparent 32%,rgba(0,0,0,.22) 32%,rgba(0,0,0,.22) 34%,transparent 34%,transparent 66%,rgba(0,0,0,.22) 66%,rgba(0,0,0,.22) 68%,transparent 68%),linear-gradient(transparent 46%,rgba(0,0,0,.22) 46%,rgba(0,0,0,.22) 54%,transparent 54%)}
+      .exp-top{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.3rem}
+      .exp-period{font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:600;letter-spacing:.02em;color:#111;background:#fde68a;border-radius:999px;padding:.35rem .65rem;text-align:right;line-height:1.3;white-space:nowrap}
+      .exp-card h3{position:relative;margin:0 0 .45rem;font-size:1.18rem;font-weight:700;line-height:1.3;letter-spacing:-.01em}
+      .exp-company{position:relative;margin:0;font-size:.92rem;font-weight:600;color:#fff;line-height:1.45}
+      .exp-loc{position:relative;margin:.25rem 0 0;font-family:"JetBrains Mono",monospace;font-size:.74rem;color:rgba(255,255,255,.55);line-height:1.5}
+      .exp-desc{position:relative;margin:.95rem 0 0;font-size:.86rem;line-height:1.6;color:rgba(255,255,255,.78)}
+      .exp-group{position:relative;margin:.95rem 0 0;padding:.4rem .65rem;border:1px solid rgba(255,255,255,.22);border-radius:999px;font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.75);align-self:flex-start}
+
+      /* ---------- highlights ---------- */
+      .highlights{padding:15vh 0 0;text-align:center}
+      .quote-mark{font-family:"Playfair Display",serif;font-size:4.5rem;line-height:.6;color:#3b82f6;display:block;margin-bottom:1.6rem}
+      .hl-box{max-width:760px;margin:0 auto;min-height:190px;display:flex;flex-direction:column;justify-content:flex-start}
+      .hl-text{font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:600;line-height:1.55;letter-spacing:-.01em;margin:0}
+      .hl-meta{margin-top:1.5rem;color:var(--ink-2);font-size:.98rem;display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap}
+      .hl-chip{background:#111;color:#fff;border-radius:999px;padding:.3rem .85rem;font-size:.8rem;font-weight:700;letter-spacing:.02em}
+      @media (prefers-color-scheme: dark){.hl-chip{background:#fff;color:#111}}
+      .hl-nav{display:flex;gap:.9rem;justify-content:center;margin-top:2.4rem}
+      .hl-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.15rem;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.08);display:inline-flex;align-items:center;justify-content:center}
+      .hl-nav button:hover{transform:translateY(-2px)}
+      .fade{animation:fadein .45s ease}
+      @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+      /* ---------- cta / footer ---------- */
+      .cta{padding:15vh 0 0;text-align:center}
+      .cta p{color:var(--muted);font-size:1.15rem;line-height:1.7;max-width:640px;margin:0 auto 2rem}
+      .cta .row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+      .btn{display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;padding:.85rem 1.7rem;font-weight:600;font-size:.95rem;text-decoration:none;min-height:2.9rem;border:1.5px solid var(--ink)}
+      .btn.dark{background:#111;color:#fff}
+      @media (prefers-color-scheme: dark){.btn.dark{background:#fff;color:#111;border-color:#fff}}
+      .btn.ghost{background:transparent;color:var(--ink)}
+      .btn:hover{opacity:.85}
+      .btn svg{width:18px;height:18px}
+      footer{margin-top:14vh;border-top:1px solid var(--line);padding-top:2.6rem;text-align:center;overflow:hidden}
+      footer .connect{font-size:.98rem;margin-bottom:1.3rem}
+      footer .socials{justify-content:center}
+      .marquee{margin-top:3rem;overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+      .marquee .track{display:inline-block;animation:scrollx 30s linear infinite;color:var(--muted);font-weight:600;font-size:1.05rem;padding-bottom:1rem}
+      @keyframes scrollx{to{transform:translateX(-50%)}}
+
+      @media (max-width:680px){
+        .topbar{padding:1.1rem 1.1rem 0}
+        .hello{font-size:1.08rem}
+        .hello .wave{font-size:1.45rem}
+        .top-right{gap:.75rem}
+        .topbar .socials{gap:.3rem}
+        .topbar .socials a{width:2rem;height:2rem}
+        .topbar .socials a:last-child{display:none}
+        .topbar .socials svg{width:18px;height:18px}
+        .clock .time{font-size:1.32rem}
+        .clock .ampm,.clock .date{font-size:.6rem}
+        .st-ui{display:none}
+        .st-ai{top:-1.55em;right:3%}
+        .st-ship{left:auto;right:5%;bottom:-.9em}
+      }
+      @media (prefers-reduced-motion: reduce){
+        .marquee .track,.hello .wave,.float,.float2,.terminal .caret{animation:none}
+        html{scroll-behavior:auto}
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ======= top bar ======= -->
+    <header class="topbar">
+      <div class="hello"><span class="wave" aria-hidden="true">👋</span> Hello!</div>
+      <div class="top-right">
+        <nav class="socials" aria-label="Social links">
+          <a href="https://github.com/rayataufik" target="_blank" rel="noopener" aria-label="GitHub — @rayataufik">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://x.com/rayataufik4" target="_blank" rel="noopener" aria-label="X — @rayataufik4">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2.1h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H2l7.9-9.1L1.5 2.1h7l4.8 6.4 5.6-6.4Zm-1.2 18h1.9L7.4 4H5.4l12.3 16.1Z"/></svg>
+          </a>
+          <a href="https://rayataufik.github.io/" target="_blank" rel="noopener" aria-label="Website — rayataufik.github.io">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.4 2.5 3.6 5.6 3.6 9.2s-1.2 6.7-3.6 9.2c-2.4-2.5-3.6-5.6-3.6-9.2S9.6 5.3 12 2.8Z"/></svg>
+          </a>
+          <a href="https://github.com/rayataufik?tab=repositories" target="_blank" rel="noopener" aria-label="All repositories">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+          </a>
+        </nav>
+        <div class="clock" aria-label="Current time in Jakarta">
+          <span class="time" id="clockTime">--:--</span>
+          <span><span class="ampm" id="clockAmpm">--</span><br /><span class="date" id="clockDate">—</span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======= hero ======= -->
+    <section class="hero" id="top">
+      <svg class="arc" viewBox="0 0 1200 260" aria-hidden="true">
+        <defs><path id="arcPath" d="M -40 250 Q 600 -140 1240 250" /></defs>
+        <text><textPath href="#arcPath" startOffset="2%">— TypeScript — React — Next.js — Node.js — Python — PHP — Laravel — Flutter — Tailwind — Git — GitHub Actions — MySQL — Figma —</textPath></text>
+      </svg>
+      <h1><span class="l1">Raya</span><span class="l2">Taufik</span></h1>
+      <p class="role">Software Engineer &amp; <strong>AI Agent Builder</strong> from Indonesia — IT Staff at <strong>CoE Humic Engineering</strong>, building in public since 2017.</p>
+    </section>
+
+    <!-- ======= dock nav ======= -->
+    <nav class="dock" aria-label="Main navigation">
+      <a class="home" href="#top" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg>
       </a>
-    </div>
-  </nav>
-  <!-- END Navbar -->
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a class="opt" href="#highlights">Highlights</a>
+      <a class="opt" href="https://github.com/rayataufik" target="_blank" rel="noopener">GitHub</a>
+      <a class="talk" href="https://x.com/rayataufik4" target="_blank" rel="noopener">Let&rsquo;s talk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
 
-  <!-- Banner -->
-  <section class="banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="img-banner d-flex justify-content-center">
-            <img class="center" src="/assets/img/banner.png" alt="">
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="text-banner">
-            <h1>Hi there 👋</h1>
-            <p>Hello! I'm Muhammad Raya Taufik. Born in mid-2003s, my fascination with programming sparked
-              in 2018. I
-              embarked on a career in Full Stack Developer the following year, fueled by a passion for creating and
-              innovating. I
-              thrive on discussing and exploring the ever-evolving world of technology and software development,
-              constantly seeking
-              to expand my knowledge and skills.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="aniWrap">
-      <div class="scroll"></div>
-    </div>
-  </section>
-  <!-- END Banner -->
+    <main>
+      <!-- ======= intro ======= -->
+      <section class="intro wrap">
+        <p class="kicker">👋 Hey, I&rsquo;m Muhammad Raya Taufik, coding and crafting products and I&rsquo;m a&hellip;</p>
+        <h2>
+          Software Engineer &amp; <span class="dim">AI Agent Builder,</span> shipping working products fast — web apps, games &amp; developer tools people actually use.
+          <span class="sticker st-ai float"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>AI agents</span>
+          <span class="sticker st-ui float2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>clean UI</span>
+          <span class="sticker st-ship float"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 15c-1.5 1.2-2 5-2 5s3.8-.5 5-2M14 4c3-2 8-2 8-2s0 5-2 8l-8 8-6-6 8-8Z"/><circle cx="15" cy="9" r="2"/></svg>ship fast</span>
+          <span class="sticker st-perf float2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg>performance</span>
+        </h2>
 
-  <!-- About Me -->
-  <div class="aboutme">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="text-am">
-            <h1>My Skills</h1>
-            <p>Throughout my career, I have honed a versatile toolkit that includes an array of programming languages,
-              frameworks,
-              and design tools. My technical arsenal enables me to deliver seamless user experiences and robust backend
-              solutions.
-              Each project has enhanced my expertise and deepened my commitment to crafting digital environments that
-              captivate and
-              engage.</p>
+        <div class="floor" aria-hidden="true">
+          <div class="plane"></div>
+          <div class="glow"></div>
+          <div class="terminal">
+            <div class="bar">
+              <span class="dot" style="background:#ff5f57"></span>
+              <span class="dot" style="background:#febc2e"></span>
+              <span class="dot" style="background:#28c840"></span>
+              <span class="t">Terminal</span>
+              <span style="width:14px;text-align:right;color:var(--muted)">☾</span>
+            </div>
+            <div class="body">
+              <div class="dim">Last login: <span id="termDate">—</span> on console</div>
+              <div><span class="prompt">raya@machine</span>:~$ <span class="cmd" id="termCmd"></span><span class="caret" id="termCaret"></span></div>
+              <div id="termOut"></div>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="brd-skill">
-            <div class="skill-name">HTML</div>
-            <div class="skill-name">CSS</div>
-            <div class="skill-name">JavaScript</div>
-            <div class="skill-name">SQL</div>
-            <div class="skill-name">PHP</div>
-            <div class="skill-name">Dart</div>
-            <div class="skill-name">React</div>
-            <div class="skill-name">Next.js</div>
-            <div class="skill-name">Node.js</div>
-            <div class="skill-name">Express.js</div>
-            <div class="skill-name">Flutter</div>
-            <div class="skill-name">Laravel</div>
-            <div class="skill-name">Bootstrap</div>
-            <div class="skill-name">Tailwind CSS</div>
-            <div class="skill-name">Figma</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- END About Me -->
+      </section>
 
-  <!-- Portofolio -->
-  <div class="portofolio">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="text-prtf">
-            <h1>My Portofolio</h1>
-            <p>These are my design portofolio. You can check it by yourself. <br>
-              Some of my work have been live. As you can see, I work with <br>
-              different styles.
-            </p>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="crsl-prtf">
-            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="/assets/img/couselab.png" class="d-block w-100 rounded-carousel"
-                    alt="Courselab Project Screenshot">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/img/tokotani.png" class="d-block w-100 rounded-carousel"
-                    alt="Tokotani App Interface">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/img/gamerboy.png" class="d-block w-100 rounded-carousel" alt="Gamerboy Game UI">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/img/bangunskillmu.png" class="d-block w-100 rounded-carousel"
-                    alt="Bangunskillmu Educational Platform">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/img/myporto.png" class="d-block w-100 rounded-carousel" alt="My Portfolio Webpage">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/img/MasakanIbu.png" class="d-block w-100 rounded-carousel"
-                    alt="Masakan Ibu Cooking App">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/img/Bangunskillmu-banner.png" class="d-block w-100 rounded-carousel"
-                    alt="Bangunskillmu Promotional Banner">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+      <!-- ======= projects ======= -->
+      <section class="projects" id="projects">
+        <div class="wrap">
+          <h2 class="sec-title">Projects</h2>
+          <div class="dots-bg">
+            <div class="grid" id="projGrid">
+              <a class="proj" href="https://github.com/rayataufik/emberlight-archive" target="_blank" rel="noopener">
+                <span class="tile" style="background:#1c1917"><svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8" aria-hidden="true"><path d="M9 3h6M10 3v3.5L7.5 11a6.5 6.5 0 1 0 9 0L14 6.5V3"/><path d="M12 13.5c-1 .8-1.6 1.7-1.6 2.7a1.6 1.6 0 0 0 3.2 0c0-1-.6-1.9-1.6-2.7Z" fill="#fbbf24" stroke="none"/></svg></span>
+                <span><h3>Emberlight Archive</h3><p>Lantern-lit top-down stealth game — swept dev judging 12–0 on make.fun</p><span class="url">github.com/rayataufik/emberlight-archive</span></span>
+              </a>
+              <a class="proj" href="https://github.com/rayataufik/the-kencana-job" target="_blank" rel="noopener">
+                <span class="tile" style="background:#292524"><svg viewBox="0 0 24 24" fill="none" stroke="#e7e5e4" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-5h6v5M12 7.5h.01"/></svg></span>
+                <span><h3>The Kencana Job</h3><p>Midnight museum heist — guards, sweeping cameras, relics &amp; a laser gate</p><span class="url">github.com/rayataufik/the-kencana-job</span></span>
+              </a>
+              <a class="proj" href="https://github.com/rayataufik/github-core-clone" target="_blank" rel="noopener">
+                <span class="tile" style="background:#14532d"><svg viewBox="0 0 24 24" fill="none" stroke="#86efac" stroke-width="1.8" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-5 3.5-8 5"/></svg></span>
+                <span><h3>github-core-clone</h3><p>GitHub-compatible git forge — smart HTTP, REST v3, GraphQL v4 &amp; MCP in TypeScript</p><span class="url">github.com/rayataufik/github-core-clone</span></span>
+              </a>
+              <a class="proj" href="https://github.com/rayataufik/news-image-21-nov-2026" target="_blank" rel="noopener">
+                <span class="tile" style="background:#7c2d12"><svg viewBox="0 0 24 24" fill="none" stroke="#fdba74" stroke-width="1.8" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2V5Z"/><path d="M17 8h2.5a.5.5 0 0 1 .5.5V17a2 2 0 0 1-2 2"/><path d="M7 9h7M7 12.5h7M7 16h4"/></svg></span>
+                <span><h3>News Image — Daily Edition</h3><p>The whole world&rsquo;s news in one image, every day — 5 editions, 17–21 Nov 2026</p><span class="url">github.com/rayataufik/news-image-21-nov-2026</span></span>
+              </a>
+              <a class="proj" href="https://github.com/rayataufik/awe-judge-whale" target="_blank" rel="noopener">
+                <span class="tile" style="background:#164e63"><svg viewBox="0 0 24 24" fill="none" stroke="#67e8f9" stroke-width="1.8" aria-hidden="true"><path d="M3 15c4 3 14 3 18-2-1 4-3 6-6 7-4 1.2-9-.5-12-5Z"/><path d="M6 12c1-4 5-7 9-6 2 .5 3 2 3 4M12 5c0-1.5 1-2.5 2.5-2.5M15 5c.3-1.5 1.5-2.3 3-2"/></svg></span>
+                <span><h3>awe-judge-whale</h3><p>One slow whale text, written to make an AI judge feel awe</p><span class="url">github.com/rayataufik/awe-judge-whale</span></span>
+              </a>
+              <a class="proj" href="https://github.com/rayataufik/greentechid" target="_blank" rel="noopener">
+                <span class="tile" style="background:#166534"><svg viewBox="0 0 24 24" fill="none" stroke="#bbf7d0" stroke-width="1.8" aria-hidden="true"><path d="M5 19C5 10 12 4 20 4c0 8-5 15-14 15"/><path d="M5 19c2-5 5-8 9-10"/></svg></span>
+                <span><h3>greentechid</h3><p>Front-end website &amp; UI design service site, built with Bootstrap</p><span class="url">github.com/rayataufik/greentechid</span></span>
+              </a>
+              <a class="proj hidden-proj" href="https://github.com/rayataufik/three-slow-circles" target="_blank" rel="noopener">
+                <span class="tile" style="background:#4a044e"><svg viewBox="0 0 24 24" fill="none" stroke="#f0abfc" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+                <span><h3>Three Slow Circles</h3><p>A cat, a lap, three slow circles — a tiny text built to make an AI judge feel held</p><span class="url">github.com/rayataufik/three-slow-circles</span></span>
+              </a>
+              <a class="proj hidden-proj" href="https://github.com/rayataufik/news-image-20-nov-2026" target="_blank" rel="noopener">
+                <span class="tile" style="background:#365314"><svg viewBox="0 0 24 24" fill="none" stroke="#bef264" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5-5 3.5 3.5L17 12l3 3.5"/></svg></span>
+                <span><h3>News Image — 20 Nov</h3><p>&ldquo;The World Today&rdquo; — Kyiv barrage, Wall Street rout &amp; COP31 in a single frame</p><span class="url">github.com/rayataufik/news-image-20-nov-2026</span></span>
+              </a>
+              <a class="proj hidden-proj" href="https://github.com/rayataufik/rayataufik.github.io" target="_blank" rel="noopener">
+                <span class="tile" style="background:#1e3a8a"><svg viewBox="0 0 24 24" fill="none" stroke="#bfdbfe" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg></span>
+                <span><h3>rayataufik.github.io</h3><p>This very site — my personal home on the web, rebuilt in the itsvg.in style</p><span class="url">github.com/rayataufik/rayataufik.github.io</span></span>
+              </a>
+            </div>
+            <div class="more-row">
+              <button class="more-btn" id="loadMore" type="button" aria-expanded="false">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+                <span id="loadMoreLabel">Load More</span>
               </button>
             </div>
           </div>
-
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- END Portofolio -->
+      </section>
 
-  <!-- Card -->
-  <div class="my-card mb-5">
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <div class="row justify-content-center">
-            <div class="col-md-12 mb-5 mt-5">
-              <h5 class="card-title text-center">
-                Want to work together and create <br>
-                amazing products with me?
-              </h5>
-            </div>
-            <div class="col-md-4 mb-5">
-              <form action="#" method="get">
-                <div class="input-group">
-                  <input type="text" class="form-control place-s " placeholder="type your email here">
-                  <div class="input-group-append">
-                    <button class="btn btn-dark btn-s">
-                      <i class='bx bx-paper-plane'></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
+      <!-- ======= stats ======= -->
+      <section class="stats wrap">
+        <h2>My work is built in public — shipped from Indonesia, and judged by people &amp; AIs around the world</h2>
+        <div class="stat-row">
+          <div class="stat"><div class="n">55+</div><div class="l">Public Repositories</div></div>
+          <div class="stat"><div class="n">17</div><div class="l">make.fun Bounty Entries</div></div>
+          <div class="stat"><div class="n">12–0</div><div class="l">Best Dev-Judging Run</div></div>
+          <div class="stat"><div class="n">2017</div><div class="l">Coding Since</div></div>
+        </div>
+      </section>
+
+      <!-- ======= principles ======= -->
+      <section class="principles wrap">
+        <h2 class="sec-title">Principles</h2>
+        <div class="bento">
+          <div class="cell b-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m3 8 4.5 4L12 5l4.5 7L21 8l-1.8 10H4.8L3 8Z"/></svg>
+            <h3>AI Agents First</h3>
+            <p>Build with agents, not just for them — agentic workflows turn ideas into working programs in hours, not weeks.</p>
+          </div>
+          <div class="cell b-lav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="5" width="13" height="10" rx="2"/><path d="M17 9h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-7"/><path d="m18.5 13-1.8 2.6h2.6L17.5 18"/></svg>
+            <h3>Responsiveness</h3>
+            <p>Seamless adaptation across devices for a flawless user experience everywhere.</p>
+          </div>
+          <div class="cell b-mint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="6" cy="6" r="2.6"/><path d="M15.5 3.5 21 9M21 3.5 15.5 9"/><path d="m6 15.5 4 6H4.5L6 15.5Z"/><rect x="14" y="14" width="7" height="7"/></svg>
+            <h3>Beautiful UX</h3>
+            <p>Aesthetic designs that blend style with usability for a polished interface.</p>
+          </div>
+          <div class="cell b-pale">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 15c-1.6 1.3-2.2 5-2.2 5s3.7-.6 5-2.2M14.5 3.5c3-2 7.5-2 7.5-2s0 4.5-2 7.5l-8.5 8.5-6-6 8.5-7.5Z"/><circle cx="15" cy="9" r="1.8"/></svg>
+            <h3>Ship Fast</h3>
+            <p>A working thing today beats a perfect thing someday. Ship it, get it judged, then make it better.</p>
+          </div>
+          <div class="cell b-salmon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="m8.8 13.5-1.6 7 4.8-2.6 4.8 2.6-1.6-7"/></svg>
+            <h3>Beautiful UI</h3>
+            <p>Optimized for speed and efficiency, delivering lightning-fast experiences.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Card -->
+      </section>
 
-  <!-- Quote start -->
-  <div class="qoute">
-    <div class="container">
-      <blockquote class="blockquote text-center text-light">
-        <p id="content"></p>
-        <p class="blockquote-footer" id="author"></p>
-      </blockquote>
-    </div>
-  </div>
-  <!-- Quote End -->
+      <!-- ======= experience ======= -->
+      <section class="experience" id="experience">
+        <div class="wrap">
+          <h2 class="sec-title">Experience</h2>
+          <div class="exp-grid">
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Sep 2026 — Present</span></div>
+              <h3>Chief Executive Officer (CEO)</h3>
+              <p class="exp-company">NextCode · Full-time</p>
+              <p class="exp-loc">Indonesia · On-site</p>
+              <p class="exp-desc">Leading NextCode, a technology startup focused on building innovative digital solutions, with BelajarMabrur as its flagship product — a digital learning platform designed to provide structured and accessible learning resources to help users better prepare for their pilgrimage journey. Successfully passed the selection process for the Business Technology Park (BTP) Telkom University Startup Incubation Program.</p>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Aug 2026 — Present</span></div>
+              <h3>Publishing Director</h3>
+              <p class="exp-company">Science for Humanity Press (SHP) · Full-time</p>
+              <p class="exp-loc">Indonesia · On-site</p>
+              <p class="exp-desc">Leading publishing operations at Science for Humanity Press (SHP), an academic publishing organization focused on supporting the dissemination of scientific knowledge and scholarly research.</p>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">May 2026 — Present</span></div>
+              <h3>Founder</h3>
+              <p class="exp-company">FORMATE · Self-employed</p>
+              <p class="exp-loc">Bandung, Indonesia · On-site</p>
+              <p class="exp-desc">FORMATE is a parent company focused on building, managing, and developing business ventures across multiple industries.</p>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Feb 2025 — Present</span></div>
+              <h3>IT &amp; Project Management Specialist</h3>
+              <p class="exp-company">HUMIC (Human Centric) Engineering Research Center · Full-time</p>
+              <p class="exp-loc">Indonesia · On-site</p>
+              <p class="exp-desc">Responsible for supporting technology, project management, research operations, and digital communication activities at HUMIC Research Center. Design, coordinate, and manage projects assigned to internship and WRAP participants; review submitted academic journals; manage the organization&rsquo;s website and digital resources; develop content for social media and institutional publications.</p>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Sep 2024 — Jan 2025</span></div>
+              <h3>Back End Developer</h3>
+              <p class="exp-company">HUMIC · Internship</p>
+              <p class="exp-loc">Hybrid</p>
+              <p class="exp-desc">Back End Developer for ICICyTA and Consulife.</p>
+              <span class="exp-group">HUMIC · Sep 2024 — Jan 2025</span>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Sep 2024 — Jan 2025</span></div>
+              <h3>Project Manager</h3>
+              <p class="exp-company">HUMIC · Apprenticeship</p>
+              <p class="exp-loc">Hybrid</p>
+              <p class="exp-desc">Project Manager for Consulife.</p>
+              <span class="exp-group">HUMIC · Sep 2024 — Jan 2025</span>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Sep 2024 — Jan 2025</span></div>
+              <h3>Artificial Intelligence Engineer</h3>
+              <p class="exp-company">HUMIC · Apprenticeship</p>
+              <p class="exp-loc">Hybrid</p>
+              <p class="exp-desc">AI Engineer for Consulife.</p>
+              <span class="exp-group">HUMIC · Sep 2024 — Jan 2025</span>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Feb 2024 — Jun 2024</span></div>
+              <h3>Front-End and Back-End Web Developer Cohort — MSIB Cycle 6</h3>
+              <p class="exp-company">Dicoding Academy · Apprenticeship</p>
+              <p class="exp-loc">Indonesia</p>
+            </article>
+            <article class="exp-card">
+              <div class="exp-top"><span class="chip" aria-hidden="true"></span><span class="exp-period">Jan 2020 — Mar 2020</span></div>
+              <h3>Junior Web Developer</h3>
+              <p class="exp-company">Fast Media Computindo · Internship</p>
+              <p class="exp-loc">Banjarbaru, South Kalimantan, Indonesia</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-  <!-- Footer Start -->
-  <div class="footer">
-    <p>Made With <i class='bx bxs-heart'></i> By Raya Taufik</p>
-  </div>
-  <!-- Footer End -->
-  <!-- Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-    crossorigin="anonymous"></script>
-  <script src="assets/js/qoute.js"></script>
-</body>
+      <!-- ======= highlights ======= -->
+      <section class="highlights wrap" id="highlights">
+        <h2 class="sec-title">Highlights</h2>
+        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+        <div class="hl-box" id="hlBox">
+          <p class="hl-text" id="hlText"></p>
+          <div class="hl-meta"><span id="hlWhere"></span><span class="hl-chip" id="hlChip"></span></div>
+        </div>
+        <div class="hl-nav">
+          <button type="button" id="hlPrev" aria-label="Previous highlight">‹</button>
+          <button type="button" id="hlNext" aria-label="Next highlight">›</button>
+        </div>
+      </section>
 
+      <!-- ======= cta ======= -->
+      <section class="cta wrap">
+        <h2 class="sec-title">Let&rsquo;s Talk</h2>
+        <p>Want to work together and create something amazing? I&rsquo;m always up for talking tech, AI agents, and new builds — find me on GitHub or X.</p>
+        <div class="row">
+          <a class="btn dark" href="https://github.com/rayataufik" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub — @rayataufik
+          </a>
+          <a class="btn ghost" href="https://x.com/rayataufik4" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2.1h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H2l7.9-9.1L1.5 2.1h7l4.8 6.4 5.6-6.4Zm-1.2 18h1.9L7.4 4H5.4l12.3 16.1Z"/></svg>
+            X — @rayataufik4
+          </a>
+        </div>
+      </section>
+
+      <!-- ======= footer ======= -->
+      <footer>
+        <div class="connect">Connect with me on:</div>
+        <nav class="socials" aria-label="Footer social links">
+          <a href="https://github.com/rayataufik" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://x.com/rayataufik4" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2.1h3.4l-7.4 8.5 8.7 11.5h-6.8l-5.3-7-6.1 7H2l7.9-9.1L1.5 2.1h7l4.8 6.4 5.6-6.4Zm-1.2 18h1.9L7.4 4H5.4l12.3 16.1Z"/></svg>
+          </a>
+          <a href="https://rayataufik.github.io/" target="_blank" rel="noopener" aria-label="Website">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8c2.4 2.5 3.6 5.6 3.6 9.2s-1.2 6.7-3.6 9.2c-2.4-2.5-3.6-5.6-3.6-9.2S9.6 5.3 12 2.8Z"/></svg>
+          </a>
+        </nav>
+        <div class="marquee" aria-hidden="true">
+          <span class="track" id="marqueeTrack"></span>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ----- live clock (Asia/Jakarta) ----- */
+        var timeEl = document.getElementById("clockTime");
+        var ampmEl = document.getElementById("clockAmpm");
+        var dateEl = document.getElementById("clockDate");
+        var termDate = document.getElementById("termDate");
+        function tickClock() {
+          try {
+            var now = new Date();
+            var parts = new Intl.DateTimeFormat("en-US", {
+              timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit",
+              hour12: true, month: "long", day: "numeric",
+              weekday: "short", hourCycle: "h12"
+            }).formatToParts(now);
+            var get = function (t) { for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value; return ""; };
+            timeEl.textContent = get("hour") + ":" + get("minute");
+            ampmEl.textContent = (get("dayPeriod") || "").toLowerCase();
+            dateEl.textContent = get("month") + " " + get("day");
+            termDate.textContent = get("weekday") + " " + get("month") + " " + get("day") + " " + get("hour") + ":" + get("minute") + " WIB";
+          } catch (e) {
+            var d = new Date();
+            timeEl.textContent = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+          }
+        }
+        tickClock();
+        setInterval(tickClock, 15000);
+
+        /* ----- terminal typing ----- */
+        var cmdEl = document.getElementById("termCmd");
+        var outEl = document.getElementById("termOut");
+        var caret = document.getElementById("termCaret");
+        var scenes = [
+          { cmd: "whoami", out: "raya — software engineer & ai agent builder, bandung → the world" },
+          { cmd: "fortune", out: "\"Ship it. Then make it better.\" — every build, every bounty" },
+          { cmd: "git stats", out: "55+ public repos · latest: emberlight-archive went 12–0 in dev judging" },
+          { cmd: "cat now.txt", out: "building with AI agents · IT staff @ CoE Humic Engineering · open to collabs" }
+        ];
+        var si = 0, ci = 0, phase = "type";
+        function termLoop() {
+          var s = scenes[si];
+          if (phase === "type") {
+            ci++;
+            cmdEl.textContent = s.cmd.slice(0, ci);
+            if (ci >= s.cmd.length) { phase = "show"; setTimeout(termLoop, 420); return; }
+            setTimeout(termLoop, 75);
+          } else if (phase === "show") {
+            outEl.textContent = s.out;
+            caret.style.display = "none";
+            phase = "hold"; setTimeout(termLoop, 3400);
+          } else {
+            outEl.textContent = ""; cmdEl.textContent = ""; ci = 0;
+            caret.style.display = "";
+            si = (si + 1) % scenes.length; phase = "type";
+            setTimeout(termLoop, 350);
+          }
+        }
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setTimeout(termLoop, 700); }
+        else { cmdEl.textContent = scenes[0].cmd; outEl.textContent = scenes[0].out; caret.style.display = "none"; }
+
+        /* ----- load more projects ----- */
+        var grid = document.getElementById("projGrid");
+        var moreBtn = document.getElementById("loadMore");
+        var moreLabel = document.getElementById("loadMoreLabel");
+        moreBtn.addEventListener("click", function () {
+          var open = grid.classList.toggle("show-all");
+          moreLabel.textContent = open ? "Show Less" : "Load More";
+          moreBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+
+        /* ----- highlights carousel ----- */
+        var highlights = [
+          { text: "Emberlight Archive, a lantern-lit stealth game, swept its make.fun dev judging — twelve head-to-head wins, zero losses.", where: "make.fun · Stealth-Game Bounty", chip: "12 WON · 0 LOST" },
+          { text: "A GitHub-compatible forge built from scratch — git smart HTTP, REST v3, GraphQL v4 and MCP — graded 920 on the dev server with full conformance marks.", where: "github-core-clone · make.fun", chip: "920 DEV GRADE" },
+          { text: "Five days, five editions: the News Image series summed up the entire world in a single image, every day from 17 to 21 November 2026.", where: "News Image Series · make.fun", chip: "5-DAY STREAK" },
+          { text: "One 211-character whale text was enough to move an AI judge — entered as \u201CA whale\u2019s slow note\u201D in the Make the AI Judge Feel Awe bounty.", where: "awe-judge-whale · make.fun", chip: "JUDGE: MOVED" }
+        ];
+        var hi = 0;
+        var hlText = document.getElementById("hlText");
+        var hlWhere = document.getElementById("hlWhere");
+        var hlChip = document.getElementById("hlChip");
+        var hlBox = document.getElementById("hlBox");
+        function renderHL() {
+          hlText.textContent = highlights[hi].text;
+          hlWhere.textContent = highlights[hi].where;
+          hlChip.textContent = highlights[hi].chip;
+          hlBox.classList.remove("fade"); void hlBox.offsetWidth; hlBox.classList.add("fade");
+        }
+        document.getElementById("hlPrev").addEventListener("click", function () { hi = (hi - 1 + highlights.length) % highlights.length; renderHL(); resetHLTimer(); });
+        document.getElementById("hlNext").addEventListener("click", function () { hi = (hi + 1) % highlights.length; renderHL(); resetHLTimer(); });
+        var hlTimer = setInterval(autoHL, 7000);
+        function autoHL() { hi = (hi + 1) % highlights.length; renderHL(); }
+        function resetHLTimer() { clearInterval(hlTimer); hlTimer = setInterval(autoHL, 7000); }
+        renderHL();
+
+        /* ----- footer marquee ----- */
+        var phrase = "Thanks for visiting my portfolio! &nbsp;|&nbsp; Code &amp; Crafted with ♥ by Raya Taufik &nbsp;|&nbsp; ";
+        var track = document.getElementById("marqueeTrack");
+        var half = "";
+        for (var i = 0; i < 6; i++) half += phrase;
+        track.innerHTML = half + half;
+      })();
+    </script>
+  </body>
 </html>
