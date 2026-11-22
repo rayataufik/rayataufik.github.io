@@ -92,7 +92,14 @@
       .st-ui{top:.85em;left:24%;background:#fef08a;border-color:#ca8a04;color:#854d0e;transform:rotate(-5deg)}
       .st-ship{bottom:-.4em;left:44%;background:#bbf7d0;border-color:#16a34a;color:#166534;transform:rotate(-4deg)}
       .st-perf{top:2.6em;right:6%;background:#e9d5ff;border-color:#9333ea;color:#6b21a8;transform:rotate(5deg)}
-      @media (max-width:760px){.st-perf{display:none}.st-ai{right:2%}.st-ship{left:52%}}
+      @media (max-width:760px){
+        .st-perf{display:none}
+        /* give the headline clear bands above and below so the two visible
+           stickers sit in empty space and never cover headline words */
+        .intro h2{padding-top:2.9rem;padding-bottom:3.1rem}
+        .st-ai{top:.15rem;right:2%}
+        .st-ship{bottom:.15rem;left:auto;right:5%}
+      }
       .float{animation:floaty 5s ease-in-out infinite}
       .float2{animation:floaty 6s ease-in-out infinite reverse}
       @keyframes floaty{0%,100%{margin-top:0}50%{margin-top:-7px}}
@@ -216,8 +223,7 @@
         .clock .time{font-size:1.32rem}
         .clock .ampm,.clock .date{font-size:.6rem}
         .st-ui{display:none}
-        .st-ai{top:-1.55em;right:3%}
-        .st-ship{left:auto;right:5%;bottom:-.9em}
+        .arc{display:none}
       }
       @media (prefers-reduced-motion: reduce){
         .marquee .track,.hello .wave,.float,.float2,.terminal .caret{animation:none}
@@ -278,7 +284,7 @@
     <main>
       <!-- ======= intro ======= -->
       <section class="intro wrap">
-        <p class="kicker">👋 Hey, I&rsquo;m Muhammad Raya Taufik, coding and crafting products and I&rsquo;m a&hellip;</p>
+        <p class="kicker">👋 Hey, I&rsquo;m Muhammad Raya Taufik, coding and crafting products, and shipping them to the world.</p>
         <h2>
           Software Engineer &amp; <span class="dim">AI Agent Builder,</span> shipping working products fast — web apps, games &amp; developer tools people actually use.
           <span class="sticker st-ai float"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>AI agents</span>
